@@ -21,11 +21,11 @@ char *get_full_sentence(char *sentence_one, char *sentence_two, int size) {
 }
 
 int main() {
-    int on_stack = 100;
+  int on_stack = 100;
 	printf("sentence_on_stack is on the stack: %s\n", is_on_stack(&on_stack)?"true":"false");
 
-    char* sentence_on_heap = get_full_sentence("I am", " on the heap.", 20);
-    printf("sentence_on_heap is on the stack: %s\n", is_on_stack(sentence_on_heap)?"true":"false");
-    
-    return 0;
+  char* sentence_on_heap = get_full_sentence("I am", " on the heap.", 20);
+  printf("sentence_on_heap is on the stack: %s\n", is_on_stack(sentence_on_heap)?"true":"false");
+  free(sentence_on_heap);
+  return 0;
 }
